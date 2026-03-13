@@ -71,5 +71,5 @@ resource "aws_ecs_service" "service" {
     container_port   = each.value.port
   }
 
-  depends_on = [aws_lb_listener.http]
+  depends_on = [aws_lb_listener_rule.service_host]
 }

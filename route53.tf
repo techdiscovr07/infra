@@ -11,3 +11,17 @@ resource "aws_route53_record" "service" {
     evaluate_target_health = true
   }
 }
+
+resource "aws_route53_record" "caa" {
+  count = var.route53_zone_id == "" ? 0 : 1
+
+  zone_id = var.route53_zone_id
+  name    = var.domain_name
+  type    = "CAA"
+  ttl     = 300
+  records = [
+    "0 issue \"amazon.com\"",
+    "0 issuewild \"amazon.com\""
+  ]
+}
+

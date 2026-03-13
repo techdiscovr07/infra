@@ -34,6 +34,12 @@ variable "availability_zones" {
   default     = ["ap-south-1a", "ap-south-1b"]
 }
 
+variable "domain_name" {
+  description = "The main domain name (e.g. discovr.ai)"
+  type        = string
+  default     = ""
+}
+
 variable "backend_domain" {
   description = "Host/domain for backend service"
   type        = string
