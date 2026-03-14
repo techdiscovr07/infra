@@ -1,3 +1,4 @@
+# Fresh certificate request with clean CAA records
 resource "aws_acm_certificate" "main" {
   count = var.domain_name == "" ? 0 : 1
 
