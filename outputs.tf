@@ -25,7 +25,7 @@ output "ecs_service_names" {
 output "acm_validation_records" {
   description = "DNS records to create for ACM certificate validation"
   value = var.domain_name == "" ? null : [
-    for dvo in aws_acm_certificate.main[0].domain_validation_options : {
+    for dvo in aws_acm_certificate.discovr[0].domain_validation_options : {
       name   = dvo.resource_record_name
       type   = dvo.resource_record_type
       record = dvo.resource_record_value
