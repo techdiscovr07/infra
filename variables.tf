@@ -139,3 +139,10 @@ variable "common_tags" {
   type        = map(string)
   default     = {}
 }
+
+variable "FIREBASE_CREDENTIALS_JSON" {
+  description = "Firebase service account JSON content"
+  type        = string
+  sensitive   = true
+  default     = ""
+}

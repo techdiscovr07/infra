@@ -35,8 +35,9 @@ locals {
   service_env = {
     backend = merge(
       {
-        SERVER_PORT    = "8080"
-        AI_SERVICE_URL = "https://${var.ai_domain}"
+        SERVER_PORT               = "8080"
+        AI_SERVICE_URL            = "https://${var.ai_domain}"
+        FIREBASE_CREDENTIALS_JSON = var.FIREBASE_CREDENTIALS_JSON
       },
       var.backend_env
     )
