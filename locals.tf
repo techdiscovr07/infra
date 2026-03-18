@@ -36,8 +36,12 @@ locals {
     backend = merge(
       {
         SERVER_PORT               = "8080"
+        PUBLIC_BASE_URL           = "https://${var.backend_domain}"
         AI_SERVICE_URL            = "https://${var.ai_domain}"
         FIREBASE_CREDENTIALS_JSON = var.FIREBASE_CREDENTIALS_JSON
+        OAUTH_STATE_SECRET        = lookup(var.backend_env, "OAUTH_STATE_SECRET", "")
+        YOUTUBE_CLIENT_ID         = lookup(var.backend_env, "YOUTUBE_CLIENT_ID", "")
+        YOUTUBE_CLIENT_SECRET     = lookup(var.backend_env, "YOUTUBE_CLIENT_SECRET", "")
       },
       var.backend_env
     )
@@ -55,7 +59,8 @@ locals {
     )
     admin = merge(
       {
-        NEXT_PUBLIC_API_URL = "https://${var.backend_domain}"
+        NEXT_PUBLIC_API_URL      = "https://${var.backend_domain}"
+        NEXT_PUBLIC_API_BASE_URL = "https://${var.backend_domain}"
       },
       var.admin_env
     )
