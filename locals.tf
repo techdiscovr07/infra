@@ -42,6 +42,8 @@ locals {
         OAUTH_STATE_SECRET        = lookup(var.backend_env, "OAUTH_STATE_SECRET", "")
         YOUTUBE_CLIENT_ID         = lookup(var.backend_env, "YOUTUBE_CLIENT_ID", "")
         YOUTUBE_CLIENT_SECRET     = lookup(var.backend_env, "YOUTUBE_CLIENT_SECRET", "")
+        INSTAGRAM_CLIENT_ID       = lookup(var.backend_env, "INSTAGRAM_CLIENT_ID", "")
+        INSTAGRAM_CLIENT_SECRET   = lookup(var.backend_env, "INSTAGRAM_CLIENT_SECRET", "")
       },
       var.backend_env
     )
